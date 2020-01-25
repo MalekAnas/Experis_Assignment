@@ -39,22 +39,22 @@ User can reach to these endpoints by requesting the following URL: http://localh
    ~~~json
     {
         "name": "Victor",
-        "surName": Jevhid,
+        "surName": "Jevhid",
         "number": "(011) 123-4517"
     },
     {
         "name": "Filib",
-        "surName": Ragman,
+        "surName": "Ragman",
         "number": "(011) 123-4637"
     },
     {
         "name": "Prapor",
-        "surName": Polinski,
+        "surName": "Polinski",
         "number": "(011) 123-7784"
     },
     {
         "name": "Therapist",
-        "surName": hoordi,
+        "surName": "hoordi",
         "number": "(011) 123-9983"
     }
    ~~~
