@@ -35,5 +35,34 @@ User can reach to these endpoints by requesting the following URL: http://localh
 	 "description":"Phone book of old smart artists!
    }
    ~~~
+- "/{phoneBookId}" accepts POST and GET requests. When get requesting this endpoint it will return the phone book with the specifide id,   and when POST requesting this endpoint with the following body, it will add a new contact or a list of contacts to the phone book.
+   ~~~xml
+   
+<contactRequests>
+    <contact>
+        <name>Tanmay Patil</name>
+        <surname>TutorialsPoint</surname>
+        <number>(011) 123-4567</number>
+    </contact>
+    <contact>
+        <name>Tanmay Patil</name>
+        <surname>TutorialsPoint</surname>
+        <number>(011) 123-4567</number>
+    </contact>
+    <contact>
+        <name>Tanmay Patil</name>
+        <surname>TutorialsPoint</surname>
+        <number>(011) 123-4567</number>
+    </contact>
+    <contact>
+        <name>Tanmay Patil</name>
+        <surname>TutorialsPoint</surname>
+        <number>(011) 123-4567</number>
+    </contact>
+
+
+</contactRequests>
+   ~~~
+   
    
    
