@@ -17,9 +17,9 @@
     private String surName;
 
     private String number;
+    }
 
 
-}
    ~~~
 
 
