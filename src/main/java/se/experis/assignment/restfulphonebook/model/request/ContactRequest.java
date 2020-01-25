@@ -1,15 +1,16 @@
-package se.experis.assignment.restfulphonebook.model;
+package se.experis.assignment.restfulphonebook.model.request;
+
 
 import lombok.Data;
 
 @Data
-public class Contact {
+public class ContactRequest {
+
 
 
     private String name;
     private String surName;
 
     private String number;
-
 
 }
