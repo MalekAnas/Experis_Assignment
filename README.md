@@ -17,8 +17,7 @@
     private String number;
     
     }
-  ~~~
-
+    ~~~
 
 ## Technologies used:
 - Java.
