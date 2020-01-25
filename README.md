@@ -59,33 +59,31 @@ User can reach to these endpoints by requesting the following URL: http://localh
     }
    ~~~
    
-   OR
    ~~~XML
-	
-<contactRequests>
-    <contact>
-        <name>Tanmay Patil</name>
-        <surname>TutorialsPoint</surname>
-        <number>(011) 123-4567</number>
-    </contact>
-    <contact>
-        <name>Tanmay Patil</name>
-        <surname>TutorialsPoint</surname>
-        <number>(011) 123-4567</number>
-    </contact>
-    <contact>
-        <name>Tanmay Patil</name>
-        <surname>TutorialsPoint</surname>
-        <number>(011) 123-4567</number>
-    </contact>
-    <contact>
-        <name>Tanmay Patil</name>
-        <surname>TutorialsPoint</surname>
-        <number>(011) 123-4567</number>
-    </contact>
+
+	<contactRequests>
+	    <contact>
+		<name>Tanmay Patil</name>
+		<surname>TutorialsPoint</surname>
+		<number>(011) 123-4567</number>
+	    </contact>
+	    <contact>
+		<name>Tanmay Patil</name>
+		<surname>TutorialsPoint</surname>
+		<number>(011) 123-4567</number>
+	    </contact>
+	    <contact>
+		<name>Tanmay Patil</name>
+		<surname>TutorialsPoint</surname>
+		<number>(011) 123-4567</number>
+	    </contact>
+	    <contact>
+		<name>Tanmay Patil</name>
+		<surname>TutorialsPoint</surname>
+		<number>(011) 123-4567</number>
+	    </contact>
 
 
-</contactRequests>
+	</contactRequests>
    ~~~
-   
    
