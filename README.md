@@ -11,19 +11,28 @@
 4. The contact has the following properties:
    ~~~java
    public class Contact {
-
-
+   
     private String name;
     private String surName;
-
     private String number;
+    
     }
-
-
-   ~~~
+  ~~~
 
 
 ## Technologies used:
 - Java.
 - Spring boot framework.
 - NoSql MongoDB.
+
+
+## API endpoints guide
+User can reach to these endpoints by requesting the following URL: http://localhost:8080/api/phone_book
+- "/" or " " will return all phone books.
+- "/create" accepts POST requests that creates a new phone book.
+   ~~~json
+   {
+	 "name":"Leo Da Vinci Phone Book",
+	 "description":"Phone book of old smart artists!
+   }
+   ~~~
