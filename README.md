@@ -38,24 +38,24 @@ User can reach to these endpoints by requesting the following URL: http://localh
 - "/{phoneBookId}" accepts POST and GET requests. When get requesting this endpoint it will return the phone book with the specifide id,   and when POST requesting this endpoint with the following body, it will add a new contact or a list of contacts to the phone book.
    ~~~json
     {
-        "name": "Tanmay Patil",
-        "surName": null,
-        "number": "(011) 123-4567"
+        "name": "Victor",
+        "surName": Jevhid,
+        "number": "(011) 123-4517"
     },
     {
-        "name": "Tanmay Patil",
-        "surName": null,
-        "number": "(011) 123-4567"
+        "name": "Filib",
+        "surName": Ragman,
+        "number": "(011) 123-4637"
     },
     {
-        "name": "Tanmay Patil",
-        "surName": null,
-        "number": "(011) 123-4567"
+        "name": "Prapor",
+        "surName": Polinski,
+        "number": "(011) 123-7784"
     },
     {
-        "name": "Tanmay Patil",
-        "surName": null,
-        "number": "(011) 123-4567"
+        "name": "Therapist",
+        "surName": hoordi,
+        "number": "(011) 123-9983"
     }
    ~~~
    
@@ -63,24 +63,24 @@ User can reach to these endpoints by requesting the following URL: http://localh
 
 	<contactRequests>
 	    <contact>
-		<name>Tanmay Patil</name>
-		<surname>TutorialsPoint</surname>
+		<name>Leo</name>
+		<surname>Caprio</surname>
 		<number>(011) 123-4567</number>
 	    </contact>
 	    <contact>
-		<name>Tanmay Patil</name>
-		<surname>TutorialsPoint</surname>
-		<number>(011) 123-4567</number>
+		<name>Tom</name>
+		<surname>Hanks</surname>
+		<number>(011) 123-5567</number>
 	    </contact>
 	    <contact>
-		<name>Tanmay Patil</name>
-		<surname>TutorialsPoint</surname>
-		<number>(011) 123-4567</number>
+		<name>Hampus</name>
+		<surname>Tolen</surname>
+		<number>(011) 123-1354</number>
 	    </contact>
 	    <contact>
-		<name>Tanmay Patil</name>
-		<surname>TutorialsPoint</surname>
-		<number>(011) 123-4567</number>
+		<name>Louise</name>
+		<surname>Linden</surname>
+		<number>(011) 123-6648</number>
 	    </contact>
 	</contactRequests>
    ~~~
