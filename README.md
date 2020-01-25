@@ -82,8 +82,6 @@ User can reach to these endpoints by requesting the following URL: http://localh
 		<surname>TutorialsPoint</surname>
 		<number>(011) 123-4567</number>
 	    </contact>
-
-
 	</contactRequests>
    ~~~
    
