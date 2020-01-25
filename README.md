@@ -9,7 +9,7 @@
 2. The user can add a contact to the phone book.
 3. The user can add list of contacts to a phone book.
 4. The contact has the following properties:
-   ~~~
+   ~~~java
    public class Contact {
 
 
