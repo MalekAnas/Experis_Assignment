@@ -27,8 +27,8 @@
 
 ## API endpoints guide
 User can reach to these endpoints by requesting the following URL: http://localhost:8080/api/phone_book
-- "/" or " " will return all phone books.
-- "/create" accepts POST requests that creates a new phone book.
+- "/" will return all phone books.
+- "/create" accepts POST requests that creates a new phone book. Requires the following parameters in the request body.
    ~~~json
    {
 	 "name":"Leo Da Vinci Phone Book",
