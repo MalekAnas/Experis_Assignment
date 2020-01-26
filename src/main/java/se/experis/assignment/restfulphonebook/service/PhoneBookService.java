@@ -16,5 +16,10 @@ public interface PhoneBookService {
     PhoneBook getPhoneBookById(String id);
     ContactResponse addContactToPhoneBook(ContactRequest contactRequest, String phoneBookId);
 
+    void deletePhoneBook(String id);
+    PhoneBookResponse updatePhoneBook(String id, PhoneBookRequest phoneBookRequest);
+
+    //ContactResponse updateContactInPhoneBook(String pbId, String cId);
+
 
 }

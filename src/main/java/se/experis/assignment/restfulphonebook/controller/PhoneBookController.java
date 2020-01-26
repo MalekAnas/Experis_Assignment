@@ -4,6 +4,7 @@ package se.experis.assignment.restfulphonebook.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import se.experis.assignment.restfulphonebook.exception.PhoneBookNotFoundException;
 import se.experis.assignment.restfulphonebook.model.Contact;
 import se.experis.assignment.restfulphonebook.model.PhoneBook;
 import se.experis.assignment.restfulphonebook.model.request.ContactRequest;
@@ -11,6 +12,7 @@ import se.experis.assignment.restfulphonebook.model.request.PhoneBookRequest;
 import se.experis.assignment.restfulphonebook.model.response.ContactResponse;
 import se.experis.assignment.restfulphonebook.model.response.PhoneBookResponse;
 import se.experis.assignment.restfulphonebook.service.PhoneBookService;
+import se.experis.assignment.restfulphonebook.utils.ContactIdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +43,29 @@ public class PhoneBookController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public PhoneBook getAPhoneBook(@PathVariable String id) {
 
-        return phoneBookService.getPhoneBookById(id);
+        PhoneBook returnedPhoneBook = phoneBookService.getPhoneBookById(id);
+        if (returnedPhoneBook== null)
+            throw new PhoneBookNotFoundException("The phone book is not exist!");
+        return returnedPhoneBook;
     }
+
+    @RequestMapping(value = "/{phoneBookId}" , method = RequestMethod.PUT)
+    public PhoneBookResponse updatePhoneBook(@PathVariable String phoneBookId, @RequestBody PhoneBookRequest phoneBookRequest){
+
+
+        return phoneBookService.updatePhoneBook(phoneBookId, phoneBookRequest) ;
+    }
+
+    @RequestMapping(value = "/{phoneBookId}", method = RequestMethod.DELETE)
+    public void deletePhoneBook(@PathVariable String phoneBookId){
+        phoneBookService.deletePhoneBook(phoneBookId);
+    }
+
+
+
+
+
+
 
     @RequestMapping(value = "/{phoneBookId}", method = RequestMethod.POST)
     public ContactResponse addContactToPhoneBook(@PathVariable String phoneBookId, @RequestBody ContactRequest contactRequest) {

@@ -12,6 +12,7 @@ import se.experis.assignment.restfulphonebook.model.request.PhoneBookRequest;
 import se.experis.assignment.restfulphonebook.model.response.ContactResponse;
 import se.experis.assignment.restfulphonebook.model.response.PhoneBookResponse;
 import se.experis.assignment.restfulphonebook.repository.PhoneBookRepository;
+import se.experis.assignment.restfulphonebook.utils.ContactIdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,8 @@ public class PhoneBookServiceImpl implements PhoneBookService {
 
     @Autowired
     private PhoneBookRepository phoneBookRepository;
+    @Autowired
+    private ContactIdGenerator contactIdGenerator;
 
 
     @Override
@@ -64,6 +67,7 @@ public class PhoneBookServiceImpl implements PhoneBookService {
 
         PhoneBook phoneBook = phoneBookOptional.get();
         Contact contact = new Contact();
+        contact.setId(contactIdGenerator.generateContactId(30));
         BeanUtils.copyProperties(contactRequest, contact);
         phoneBook.getContacts().add(contact); //todo fix it with better solution
         phoneBookRepository.save(phoneBook);
@@ -76,6 +80,43 @@ public class PhoneBookServiceImpl implements PhoneBookService {
         return contactResponse;
 
     }
+
+    @Override
+    public void deletePhoneBook(String id) {
+
+        Optional<PhoneBook> phoneBookOptional = phoneBookRepository.findById(id);
+        if (phoneBookOptional.isEmpty())
+            throw new PhoneBookNotFoundException("This phone book with the given id is not exist!");
+        PhoneBook phoneBook = phoneBookOptional.get();
+        phoneBookRepository.delete(phoneBook);
+
+    }
+
+    @Override
+    public PhoneBookResponse updatePhoneBook(String id, PhoneBookRequest phoneBookRequest) {
+
+        Optional<PhoneBook> phoneBookOptional = phoneBookRepository.findById(id);
+        if (phoneBookOptional.isEmpty())
+            throw new PhoneBookNotFoundException("The Phone book with given id is not exist!");
+        PhoneBook phoneBook= phoneBookOptional.get();
+        BeanUtils.copyProperties(phoneBookRequest, phoneBook);
+        phoneBookRepository.save(phoneBook);
+        PhoneBookResponse phoneBookResponse= new PhoneBookResponse();
+        BeanUtils.copyProperties(phoneBook, phoneBookResponse);
+        return phoneBookResponse;
+    }
+//
+//    @Override
+//    public ContactResponse updateContactInPhoneBook(String pbId, String cId) {
+//
+//        Optional<PhoneBook> phoneBookOptional = phoneBookRepository.findById(pbId);
+//        if (phoneBookOptional.isEmpty())
+//            throw new PhoneBookNotFoundException("The phone book with given id is not exist!");
+//
+//
+//
+//
+//    }
 
 
 }

@@ -6,10 +6,11 @@ import org.springframework.stereotype.Repository;
 import se.experis.assignment.restfulphonebook.model.Contact;
 import se.experis.assignment.restfulphonebook.model.PhoneBook;
 
+import java.util.List;
+
 
 @Repository
 public interface PhoneBookRepository extends MongoRepository<PhoneBook, String> {
-
 
 
 }
