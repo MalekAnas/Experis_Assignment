@@ -4,6 +4,7 @@ package se.experis.assignment.restfulphonebook.service;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import se.experis.assignment.restfulphonebook.exception.ContactNotFoundException;
 import se.experis.assignment.restfulphonebook.exception.PhoneBookNotFoundException;
 import se.experis.assignment.restfulphonebook.model.Contact;
 import se.experis.assignment.restfulphonebook.model.PhoneBook;
@@ -98,25 +99,15 @@ public class PhoneBookServiceImpl implements PhoneBookService {
         Optional<PhoneBook> phoneBookOptional = phoneBookRepository.findById(id);
         if (phoneBookOptional.isEmpty())
             throw new PhoneBookNotFoundException("The Phone book with given id is not exist!");
-        PhoneBook phoneBook= phoneBookOptional.get();
+        PhoneBook phoneBook = phoneBookOptional.get();
         BeanUtils.copyProperties(phoneBookRequest, phoneBook);
         phoneBookRepository.save(phoneBook);
-        PhoneBookResponse phoneBookResponse= new PhoneBookResponse();
+        PhoneBookResponse phoneBookResponse = new PhoneBookResponse();
         BeanUtils.copyProperties(phoneBook, phoneBookResponse);
         return phoneBookResponse;
     }
-//
-//    @Override
-//    public ContactResponse updateContactInPhoneBook(String pbId, String cId) {
-//
-//        Optional<PhoneBook> phoneBookOptional = phoneBookRepository.findById(pbId);
-//        if (phoneBookOptional.isEmpty())
-//            throw new PhoneBookNotFoundException("The phone book with given id is not exist!");
-//
-//
-//
-//
-//    }
+
+
 
 
 }
